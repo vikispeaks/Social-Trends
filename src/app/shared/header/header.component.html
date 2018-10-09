@@ -1,9 +1,16 @@
 <div id="page-header">
   <nav class="navbar navbar-default navbar-fixed-top">
-		<div class="col-md-3 hidden-md-down">
-			<span class="glyphicon glyphicon-flash" aria-hidden="true" href="#"></span>
-			<span class="header-text">trendings</span>
-	  </div>
+    <div class="col-md-3 hidden-md-down">
+      <span class="glyphicon glyphicon-flash" aria-hidden="true" href="#"></span>
+      <span class="header-text">trendings</span>
+    </div>
     <!-- implememt search & country select input here -->
-	</nav>
+    <div class="dropdown col-md-7">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">{{selectedCountry}}
+        <span class="caret"></span></button>
+      <ul class="dropdown-menu scrollable-menu">
+        <li><a (click)="search(country)" *ngFor="let country of countryList">{{country.name}}</a></li>
+      </ul>
+    </div>
+  </nav>
 </div>

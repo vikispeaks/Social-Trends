@@ -30,15 +30,21 @@
   border-color: rgba(0, 0, 0, 0);
 }
 
-#page-header input:focus {
+#page-header button:focus {
   border-width: 0;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(0, 0, 0, .2);
+  color: #fff;
 }
 
-#page-header input {
+#page-header button:hover {
+  color: #fff;
+}
+
+#page-header button {
   height: 35px;
   font-size: 14px;
   margin: 10px 0 10px 0;
+  background-color: rgba(128, 128, 128, 0.8);
 }
 
 #page-header nav {
@@ -47,4 +53,10 @@
   box-shadow: 0 2px 9px 0 rgba(0,0,0,0.3);
   border-bottom: 1px solid #505050;
   color: #fff;
+}
+
+#page-header .scrollable-menu {
+  height: auto;
+  max-height: 300px;
+  overflow-x: hidden;
 }

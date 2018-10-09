@@ -3,6 +3,7 @@ import {Observable} from 'rxjs';
 
 import {appConfig} from 'appConfig';
 import {ContextService} from '../context.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-page-header',
@@ -10,15 +11,17 @@ import {ContextService} from '../context.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  public selectedCountry: any;
+  public selectedCountry = 'Please select a country';
   public countryList: any[] = appConfig.countryList;
 
   // Todo: implement search
-  search = () => {
-
+  search = (country) => {
+    this.selectedCountry = country.name;
+    this.selectCountry(country);
+    this.router.navigateByUrl('/trend/youtube');
   };
 
-  constructor(public appContext: ContextService) {
+  constructor(public appContext: ContextService, private router: Router) {
   }
 
   public selectCountry(country) {

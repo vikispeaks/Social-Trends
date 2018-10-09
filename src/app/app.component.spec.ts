@@ -10,12 +10,20 @@ import {Component} from '@angular/core';
 class HeaderComponent {
 }
 
+@Component({
+  selector: 'app-trend-component',
+  template: '',
+})
+class TrendComponent {
+}
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        HeaderComponent
+        HeaderComponent,
+        TrendComponent
       ],
       imports: [RouterTestingModule]
     }).compileComponents();

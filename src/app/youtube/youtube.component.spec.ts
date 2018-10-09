@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {RouterTestingModule} from '@angular/router/testing';
-import { EventEmitter} from '@angular/core';
+import { EventEmitter, Component} from '@angular/core';
 
 import {YoutubeComponent} from './youtube.component';
 import {YoutubeService} from './service/youtube.service';
@@ -19,7 +19,10 @@ describe('YoutubeComponent', () => {
   };
   const context = {
     country: '',
-    countryChanged: new EventEmitter<string>()
+    countryChanged: new EventEmitter<string>(),
+    getCountry() {
+      return this.country;
+    }
   };
   beforeEach(async(() => {
     TestBed.configureTestingModule({

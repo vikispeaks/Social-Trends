@@ -17,13 +17,15 @@ import {HeaderComponent} from './shared/header/header.component';
 import {YoutubeComponent} from './youtube/youtube.component';
 import {YoutubeService} from './youtube/service/youtube.service';
 import {PlayerComponent} from './youtube/player/player.component';
-
+import {TrendComponent} from './trend/trend.component';
+ 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     YoutubeComponent,
-    PlayerComponent
+    PlayerComponent,
+    TrendComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import {PlayerComponent} from './youtube/player/player.component';
     MomentModule,
     RouterModule.forRoot(ROUTES, {
       useHash: Boolean(history.pushState) === false,
-      preloadingStrategy: PreloadAllModules
+      preloadingStrategy: PreloadAllModules,
+      onSameUrlNavigation: 'reload'
     }),
     NgbTypeaheadModule,
     NgbModule

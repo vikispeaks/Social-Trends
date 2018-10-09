@@ -12,11 +12,11 @@ export class YoutubeService {
   constructor(private http: HttpClient) {
   }
 
-  public getTrendingVideos() {
+  public getTrendingVideos(countryCode) {
     let params = new HttpParams();
     params = params.append('part', 'snippet');
     params = params.append('chart', 'mostPopular');
-    params = params.append('regionCode', 'US'); // should be replaced with country code from countryList
+    params = params.append('regionCode', countryCode); // should be replaced with country code from countryList
     params = params.append('maxResults', '24');
     params = params.append('key', appConfig.youtubeApiKey);
 
